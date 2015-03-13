@@ -1,0 +1,87 @@
+<Graph Description="" Group="" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="1" Class="Game:Start" pos="3960,-6790,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="2" Class="Movement:MoveEntityTo" pos="4387.1431,-6615.7144,0" flags="0" GraphEntity="0">
+   <Inputs entityId="0" Destination="0,0,0.5" DynamicUpdate="1" ValueType="0" Speed="0.25" EaseDistance="0.25" EaseOutDistance="0.25" CoordSys="2"/>
+  </Node>
+  <Node Id="10" Class="Movement:MoveEntityTo" pos="4627.1431,-6615.7144,0" flags="0" GraphEntity="0">
+   <Inputs entityId="0" Destination="0,0,-0.5" DynamicUpdate="1" ValueType="0" Speed="0.25" EaseDistance="0.25" EaseOutDistance="0.25" CoordSys="2"/>
+  </Node>
+  <Node Id="15" Class="Logic:AND" pos="4387.1431,-6785.7144,0" flags="0">
+   <Inputs A="0" B="0" Always="1"/>
+  </Node>
+  <Node Id="16" Class="Actor:LocalPlayer" pos="4180,-6450,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="21" Class="Vec3:MagnitudeVec3" pos="4800,-6330,0" flags="0">
+   <Inputs vector="0,0,0"/>
+  </Node>
+  <Node Id="29" Class="Entity:GetPos" pos="4340,-6230,0" flags="0" GraphEntity="0">
+   <Inputs entityId="0" CoordSys="1"/>
+  </Node>
+  <Node Id="30" Class="Vec3:SubVec3" pos="4650,-6330,0" flags="0">
+   <Inputs A="0,0,0" B="0,0,0"/>
+  </Node>
+  <Node Id="31" Class="Material:EntityMaterialParams" pos="5620,-6390,0" flags="0" GraphEntity="0">
+   <Inputs entityId="0" Slot="0" SubMtlId="1" ParamFloat="glow" ValueFloat="0" ParamColor="diffuse" color_ValueColor="1,0.0277553,0.0277553"/>
+  </Node>
+  <Node Id="37" Class="Time:TimedCounter" pos="3980,-6370,0" flags="0">
+   <Inputs period="0.1" limit="100000"/>
+  </Node>
+  <Node Id="39" Class="Entity:GetPos" pos="4340,-6380,0" flags="0">
+   <Inputs entityId="0" CoordSys="1"/>
+  </Node>
+  <Node Id="42" Class="Math:Reciprocal" pos="5010,-6320,0" flags="0">
+   <Inputs A="0"/>
+  </Node>
+  <Node Id="44" Class="Math:Mul" pos="5150,-6320,0" flags="0">
+   <Inputs A="0" B="500"/>
+  </Node>
+  <Node Id="54" Class="Math:Less" pos="5160,-6200,0" flags="0">
+   <Inputs A="0" B="15"/>
+  </Node>
+  <Node Id="55" Class="Math:SetNumber" pos="5300,-6180,0" flags="0">
+   <Inputs in="15"/>
+  </Node>
+  <Node Id="56" Class="Math:SetNumber" pos="5320,-6330,0" flags="0">
+   <Inputs in="15"/>
+  </Node>
+  <Node Id="57" Class="Logic:Any" pos="5460,-6330,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="62" Class="Math:SetNumber" pos="5460,-6110,0" flags="0">
+   <Inputs in="0"/>
+  </Node>
+  <Node Id="63" Class="Material:EntityMaterialParams" pos="5630,-6190,0" flags="0" GraphEntity="0">
+   <Inputs entityId="0" Slot="0" SubMtlId="0" ParamFloat="glow" ValueFloat="0" ParamColor="diffuse" color_ValueColor="1,0.0277553,0.0277553"/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="15" nodeOut="1" portIn="A" portOut="output" enabled="1"/>
+  <Edge nodeIn="37" nodeOut="1" portIn="start" portOut="output" enabled="1"/>
+  <Edge nodeIn="10" nodeOut="2" portIn="Start" portOut="Finish" enabled="1"/>
+  <Edge nodeIn="15" nodeOut="10" portIn="B" portOut="Finish" enabled="1"/>
+  <Edge nodeIn="2" nodeOut="15" portIn="Start" portOut="out" enabled="1"/>
+  <Edge nodeIn="39" nodeOut="16" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="42" nodeOut="21" portIn="A" portOut="length" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="29" portIn="B" portOut="Pos" enabled="1"/>
+  <Edge nodeIn="21" nodeOut="30" portIn="vector" portOut="out" enabled="1"/>
+  <Edge nodeIn="16" nodeOut="37" portIn="update" portOut="count" enabled="1"/>
+  <Edge nodeIn="29" nodeOut="37" portIn="Get" portOut="count" enabled="1"/>
+  <Edge nodeIn="39" nodeOut="37" portIn="Get" portOut="count" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="39" portIn="A" portOut="Pos" enabled="1"/>
+  <Edge nodeIn="44" nodeOut="42" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="54" nodeOut="44" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="56" nodeOut="44" portIn="in" portOut="out" enabled="1"/>
+  <Edge nodeIn="55" nodeOut="54" portIn="set" portOut="true" enabled="1"/>
+  <Edge nodeIn="56" nodeOut="54" portIn="set" portOut="false" enabled="1"/>
+  <Edge nodeIn="57" nodeOut="55" portIn="in2" portOut="out" enabled="1"/>
+  <Edge nodeIn="57" nodeOut="56" portIn="in1" portOut="out" enabled="1"/>
+  <Edge nodeIn="31" nodeOut="57" portIn="ValueFloat" portOut="out" enabled="1"/>
+  <Edge nodeIn="62" nodeOut="57" portIn="set" portOut="out" enabled="1"/>
+  <Edge nodeIn="63" nodeOut="62" portIn="ValueFloat" portOut="out" enabled="1"/>
+ </Edges>
+ <GraphTokens />
+</Graph>

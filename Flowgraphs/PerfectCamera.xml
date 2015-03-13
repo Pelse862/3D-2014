@@ -1,0 +1,45 @@
+<Graph Description="" Group="" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="2" Class="Game:Start" pos="-630,-140,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="6" Class="Time:TimedCounter" pos="-490,-180,0" flags="0">
+   <Inputs period="0.1" limit="9999999"/>
+  </Node>
+  <Node Id="12" Class="Debug:ConsoleVariable" pos="260,-90,0" flags="0">
+   <Inputs CVar="cl_tpvdist" Value=""/>
+  </Node>
+  <Node Id="15" Class="Actor:LocalPlayer" pos="-340,-270,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="16" Class="Debug:ConsoleVariable" pos="260,-180,0" flags="0">
+   <Inputs CVar="cl_tpvdist" Value="3.5"/>
+  </Node>
+  <Node Id="17" Class="Physics:RayCastCamera" pos="-540,20,0" flags="0">
+   <Inputs offset="0,0,0" maxLength="3.5"/>
+  </Node>
+  <Node Id="24" Class="Physics:RayCast" pos="-200,-170,0" flags="0">
+   <Inputs entityId="0" direction="0,1,0" maxLength="3.5" position="0,0,2" transformDir="0"/>
+  </Node>
+  <Node Id="26" Class="Debug:Log" pos="-200,100,0" flags="0">
+   <Inputs message=""/>
+  </Node>
+  <Node Id="27" Class="Vec3:ScaleVec3" pos="-300,50,0" flags="0">
+   <Inputs vector="0,0,0" scale="-1"/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="6" nodeOut="2" portIn="start" portOut="output" enabled="1"/>
+  <Edge nodeIn="17" nodeOut="6" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="6" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="15" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="27" nodeOut="17" portIn="vector" portOut="direction" enabled="1"/>
+  <Edge nodeIn="12" nodeOut="24" portIn="Value" portOut="distance" enabled="1"/>
+  <Edge nodeIn="12" nodeOut="24" portIn="Set" portOut="hit" enabled="1"/>
+  <Edge nodeIn="16" nodeOut="24" portIn="Set" portOut="nohit" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="27" portIn="direction" portOut="out" enabled="1"/>
+  <Edge nodeIn="26" nodeOut="27" portIn="input" portOut="out" enabled="1"/>
+  <Edge nodeIn="26" nodeOut="27" portIn="message" portOut="out" enabled="1"/>
+ </Edges>
+ <GraphTokens />
+</Graph>

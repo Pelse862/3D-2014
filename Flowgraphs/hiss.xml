@@ -1,0 +1,22 @@
+<Graph Description="" Group="elevator">
+ <Nodes>
+  <Node Id="1" Class="Game:Start" pos="-340,-480,0" flags="1">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="2" Class="Movement:MoveEntityTo" pos="-60,-380,0" flags="1" GraphEntity="0">
+   <Inputs entityId="0" Destination="0,0,10" DynamicUpdate="1" ValueType="0" Speed="5" EaseDistance="0" EaseOutDistance="0" CoordSys="2"/>
+  </Node>
+  <Node Id="10" Class="Movement:MoveEntityTo" pos="180,-380,0" flags="1" GraphEntity="0">
+   <Inputs entityId="0" Destination="0,0,-10" DynamicUpdate="1" ValueType="0" Speed="5" EaseDistance="0" EaseOutDistance="0" CoordSys="2"/>
+  </Node>
+  <Node Id="15" Class="Logic:AND" pos="-60,-550,0" flags="1">
+   <Inputs A="0" B="0" Always="1"/>
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="15" nodeOut="1" portIn="A" portOut="output" enabled="1"/>
+  <Edge nodeIn="10" nodeOut="2" portIn="Start" portOut="Finish" enabled="1"/>
+  <Edge nodeIn="15" nodeOut="10" portIn="B" portOut="Finish" enabled="1"/>
+  <Edge nodeIn="2" nodeOut="15" portIn="Start" portOut="out" enabled="1"/>
+ </Edges>
+</Graph>

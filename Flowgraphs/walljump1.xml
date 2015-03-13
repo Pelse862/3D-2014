@@ -1,0 +1,106 @@
+<Graph Description="" Group="" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="1" Class="Game:Start" pos="-550,510,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="2" Class="Actor:LocalPlayer" pos="-170,160,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="3" Class="Time:TimedCounter" pos="-220,-190,0" flags="0">
+   <Inputs period="0.1" limit="999999"/>
+  </Node>
+  <Node Id="4" Class="Physics:RayCast" pos="90,0,0" flags="0">
+   <Inputs entityId="0" direction="0,1,0" maxLength="0.5" position="0,0,0" transformDir="1"/>
+  </Node>
+  <Node Id="5" Class="Actor:PlayerIsInAir" pos="980,-80,0" flags="1">
+   <Inputs />
+  </Node>
+  <Node Id="8" Class="Actor:LocalPlayer" pos="600,430,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="9" Class="Physics:ActionImpulse" pos="1350,-300,0" flags="0">
+   <Inputs entityId="0" impulse="1000,1000,1000" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="1"/>
+  </Node>
+  <Node Id="10" Class="Actor:LocalPlayer" pos="1200,-330,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="12" Class="Debug:Log" pos="1300,270,0" flags="0">
+   <Inputs message="pressed space"/>
+  </Node>
+  <Node Id="15" Class="Physics:RayCast" pos="90,160,0" flags="0">
+   <Inputs entityId="0" direction="1,0,0" maxLength="0.5" position="0,0,0" transformDir="1"/>
+  </Node>
+  <Node Id="16" Class="Physics:RayCast" pos="90,320,0" flags="0">
+   <Inputs entityId="0" direction="-1,0,0" maxLength="0.5" position="0,0,0" transformDir="1"/>
+  </Node>
+  <Node Id="18" Class="Logic:Any" pos="390,100,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="22" Class="Debug:Log" pos="1320,220,0" flags="0">
+   <Inputs message="in air"/>
+  </Node>
+  <Node Id="24" Class="Input:Action" pos="750,460,0" flags="0">
+   <Inputs entityId="0" Action="jump" ActionMap="player" NonDevMode="0"/>
+  </Node>
+  <Node Id="28" Class="String:Compare" pos="980,400,0" flags="0">
+   <Inputs A="" B="space" IgnoreCase="1"/>
+  </Node>
+  <Node Id="29" Class="Debug:Log" pos="1390,170,0" flags="0">
+   <Inputs message="wall jump performed"/>
+  </Node>
+  <Node Id="30" Class="Logic:All" pos="1190,-200,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="31" Class="Vec3:SetVec3" pos="410,-190,0" flags="0">
+   <Inputs In="0,0,0"/>
+  </Node>
+  <Node Id="32" Class="Debug:Log" pos="380,-290,0" flags="0">
+   <Inputs message="in air"/>
+  </Node>
+  <Node Id="34" Class="Vec3:MulVec3" pos="530,-190,0" flags="0">
+   <Inputs A="0,0,0" B="1000,1000,0"/>
+  </Node>
+  <Node Id="36" Class="Vec3:AddVec3" pos="700,-190,0" flags="0">
+   <Inputs A="0,0,0" B="0,0,1000"/>
+  </Node>
+  <Node Id="37" Class="Logic:All" pos="1190,-40,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="38" Class="Logic:All" pos="1190,120,0" flags="0">
+   <Inputs />
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="3" nodeOut="1" portIn="start" portOut="output" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="1" portIn="Enable" portOut="output" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="2" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="15" nodeOut="2" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="16" nodeOut="2" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="3" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="15" nodeOut="3" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="16" nodeOut="3" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="3" portIn="Reset" portOut="count" enabled="1"/>
+  <Edge nodeIn="31" nodeOut="3" portIn="Set" portOut="count" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="4" portIn="in1" portOut="hit" enabled="1"/>
+  <Edge nodeIn="22" nodeOut="5" portIn="input" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="5" portIn="in1" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="8" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="9" nodeOut="10" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="15" portIn="in2" portOut="hit" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="16" portIn="in3" portOut="hit" enabled="1"/>
+  <Edge nodeIn="31" nodeOut="16" portIn="In" portOut="direction" enabled="1"/>
+  <Edge nodeIn="32" nodeOut="16" portIn="input" portOut="hit" enabled="1"/>
+  <Edge nodeIn="5" nodeOut="18" portIn="Trigger" portOut="out" enabled="1"/>
+  <Edge nodeIn="28" nodeOut="24" portIn="A" portOut="Pressed" enabled="1"/>
+  <Edge nodeIn="28" nodeOut="24" portIn="Compare" portOut="Pressed" enabled="1"/>
+  <Edge nodeIn="12" nodeOut="28" portIn="input" portOut="True" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="28" portIn="in2" portOut="True" enabled="1"/>
+  <Edge nodeIn="9" nodeOut="30" portIn="activate" portOut="Out" enabled="1"/>
+  <Edge nodeIn="29" nodeOut="30" portIn="input" portOut="Out" enabled="1"/>
+  <Edge nodeIn="34" nodeOut="31" portIn="A" portOut="Out" enabled="1"/>
+  <Edge nodeIn="36" nodeOut="34" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="9" nodeOut="36" portIn="impulse" portOut="out" enabled="1"/>
+  <Edge nodeIn="32" nodeOut="36" portIn="message" portOut="out" enabled="1"/>
+ </Edges>
+ <GraphTokens />
+</Graph>

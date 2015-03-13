@@ -1,0 +1,291 @@
+<Graph Description="" Group="" enabled="1" MultiPlayer="ClientServer">
+ <Nodes>
+  <Node Id="1" Class="Game:Start" pos="-540,220,0" flags="0">
+   <Inputs InGame="1" InEditor="1"/>
+  </Node>
+  <Node Id="4" Class="Physics:RayCast" pos="1230,-220,0" flags="0">
+   <Inputs entityId="0" direction="0,1,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="5" Class="Actor:PlayerIsInAir" pos="790,0,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="8" Class="Actor:LocalPlayer" pos="-300,50,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="9" Class="Physics:ActionImpulse" pos="2150,-180,0" flags="0">
+   <Inputs entityId="0" impulse="0,500,500" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="2"/>
+  </Node>
+  <Node Id="10" Class="Actor:LocalPlayer" pos="1960,-250,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="15" Class="Physics:RayCast" pos="1230,-60,0" flags="0">
+   <Inputs entityId="0" direction="1,0,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="16" Class="Physics:RayCast" pos="1230,100,0" flags="0">
+   <Inputs entityId="0" direction="-1,0,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="18" Class="Logic:Any" pos="1610,-160,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="24" Class="Input:Action" pos="-330,100,0" flags="0">
+   <Inputs entityId="0" Action="jump" ActionMap="player" NonDevMode="0"/>
+  </Node>
+  <Node Id="28" Class="String:Compare" pos="-50,40,0" flags="0">
+   <Inputs A="" B="space" IgnoreCase="1"/>
+  </Node>
+  <Node Id="29" Class="Actor:LocalPlayer" pos="950,-280,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="30" Class="Debug:Log" pos="140,-100,0" flags="0">
+   <Inputs message="player jumped"/>
+  </Node>
+  <Node Id="31" Class="Debug:Log" pos="850,270,0" flags="0">
+   <Inputs message="pressed space in air"/>
+  </Node>
+  <Node Id="32" Class="Debug:Log" pos="1740,-390,0" flags="0">
+   <Inputs message="raycast hit in air"/>
+  </Node>
+  <Node Id="33" Class="Debug:Log" pos="-650,150,0" flags="0">
+   <Inputs message="game started"/>
+  </Node>
+  <Node Id="37" Class="Physics:RayCast" pos="1230,260,0" flags="0">
+   <Inputs entityId="0" direction="0,-1,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="38" Class="Debug:Log" pos="1980,-390,0" flags="0">
+   <Inputs message="jump incoming"/>
+  </Node>
+  <Node Id="40" Class="Debug:Log" pos="1570,-330,0" flags="0">
+   <Inputs message="hey hey hey"/>
+  </Node>
+  <Node Id="45" Class="Time:Delay" pos="1750,-160,0" flags="0">
+   <Inputs delay="0.01" resetOnInput="0"/>
+  </Node>
+  <Node Id="57" Class="Debug:Log" pos="1530,-390,0" flags="0">
+   <Inputs message="hey hey hey"/>
+  </Node>
+  <Node Id="63" Class="Physics:ActionImpulse" pos="2150,10,0" flags="0">
+   <Inputs entityId="0" impulse="0,500,500" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="1"/>
+  </Node>
+  <Node Id="64" Class="Vec3:ScaleVec3" pos="1730,130,0" flags="0">
+   <Inputs vector="0,0,0" scale="500"/>
+  </Node>
+  <Node Id="67" Class="Time:Delay" pos="1710,60,0" flags="0">
+   <Inputs delay="0.01" resetOnInput="0"/>
+  </Node>
+  <Node Id="70" Class="Physics:ActionImpulse" pos="2150,190,0" flags="0">
+   <Inputs entityId="0" impulse="0,500,500" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="1"/>
+  </Node>
+  <Node Id="71" Class="Vec3:ScaleVec3" pos="1730,270,0" flags="0">
+   <Inputs vector="0,0,0" scale="500"/>
+  </Node>
+  <Node Id="72" Class="Time:Delay" pos="1720,200,0" flags="0">
+   <Inputs delay="0.01" resetOnInput="0"/>
+  </Node>
+  <Node Id="73" Class="Actor:PlayerIsInAir" pos="420,820,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="74" Class="String:Compare" pos="-50,440,0" flags="0">
+   <Inputs A="" B="lshift" IgnoreCase="1"/>
+  </Node>
+  <Node Id="75" Class="Physics:RayCast" pos="850,750,0" flags="0">
+   <Inputs entityId="0" direction="1,0,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="76" Class="Physics:RayCast" pos="850,910,0" flags="0">
+   <Inputs entityId="0" direction="-1,0,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="77" Class="Actor:LocalPlayer" pos="580,660,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="79" Class="Vec3:ScaleVec3" pos="1100,840,0" flags="0">
+   <Inputs vector="0,0,0" scale="300"/>
+  </Node>
+  <Node Id="81" Class="Vec3:ScaleVec3" pos="1100,980,0" flags="0">
+   <Inputs vector="0,0,0" scale="300"/>
+  </Node>
+  <Node Id="83" Class="Physics:ActionImpulse" pos="1620,740,0" flags="0">
+   <Inputs entityId="0" impulse="0,500,500" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="1"/>
+  </Node>
+  <Node Id="84" Class="Physics:ActionImpulse" pos="1630,910,0" flags="0">
+   <Inputs entityId="0" impulse="0,500,500" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="1"/>
+  </Node>
+  <Node Id="85" Class="Actor:LocalPlayer" pos="1380,640,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="86" Class="Time:TimedCounter" pos="610,760,0" flags="0">
+   <Inputs period="0.2" limit="5"/>
+  </Node>
+  <Node Id="87" Class="Time:TimedCounter" pos="610,940,0" flags="0">
+   <Inputs period="0.2" limit="5"/>
+  </Node>
+  <Node Id="88" Class="String:Compare" pos="10,270,0" flags="0">
+   <Inputs A="" B="lshift" IgnoreCase="1"/>
+  </Node>
+  <Node Id="89" Class="Debug:Log" pos="1240,560,0" flags="0">
+   <Inputs message="wallrun init"/>
+  </Node>
+  <Node Id="91" Class="Debug:Log" pos="10,210,0" flags="0">
+   <Inputs message="wallrun stopped"/>
+  </Node>
+  <Node Id="92" Class="Vec3:AddVec3" pos="1390,980,0" flags="0">
+   <Inputs A="0,0,0" B="0,0,200"/>
+  </Node>
+  <Node Id="93" Class="Vec3:AddVec3" pos="1390,840,0" flags="0">
+   <Inputs A="0,0,0" B="0,0,200"/>
+  </Node>
+  <Node Id="94" Class="Vec3:MulVec3" pos="1250,980,0" flags="0">
+   <Inputs A="0,0,0" B="-1,-1,0"/>
+  </Node>
+  <Node Id="95" Class="Vec3:MulVec3" pos="1250,840,0" flags="0">
+   <Inputs A="0,0,0" B="-1,-1,0"/>
+  </Node>
+  <Node Id="100" Class="Debug:Log" pos="990,560,0" flags="0">
+   <Inputs message="wallrun stopped"/>
+  </Node>
+  <Node Id="113" Class="Input:Action" pos="-330,260,0" flags="0">
+   <Inputs entityId="0" Action="sprint" ActionMap="player" NonDevMode="0"/>
+  </Node>
+  <Node Id="114" Class="Debug:Log" pos="-110,980,0" flags="0">
+   <Inputs message="pressed shift"/>
+  </Node>
+  <Node Id="115" Class="Debug:Log" pos="-110,1030,0" flags="0">
+   <Inputs message="did not press shift"/>
+  </Node>
+  <Node Id="118" Class="Logic:Any" pos="340,310,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="120" Class="Physics:RayCast" pos="850,1070,0" flags="1">
+   <Inputs entityId="0" direction="0,1,0" maxLength="0.75" position="0,0,0.25" transformDir="1"/>
+  </Node>
+  <Node Id="121" Class="Vec3:ScaleVec3" pos="1100,1140,0" flags="0">
+   <Inputs vector="0,0,0" scale="300"/>
+  </Node>
+  <Node Id="122" Class="Physics:ActionImpulse" pos="1630,1070,0" flags="0">
+   <Inputs entityId="0" impulse="0,500,500" angImpulse="0,0,0" Point="0,0,0" partIndex="0" CoordSys="1"/>
+  </Node>
+  <Node Id="123" Class="Time:TimedCounter" pos="610,1100,0" flags="0">
+   <Inputs period="0.2" limit="3"/>
+  </Node>
+  <Node Id="124" Class="Vec3:AddVec3" pos="1390,1140,0" flags="0">
+   <Inputs A="0,0,0" B="0,0,300"/>
+  </Node>
+  <Node Id="125" Class="Vec3:MulVec3" pos="1250,1140,0" flags="0">
+   <Inputs A="0,0,0" B="-1,-1,0"/>
+  </Node>
+  <Node Id="126" Class="Animations:PlayAnimation" pos="1610,1250,0" flags="0">
+   <Inputs entityId="0" anim_Animation="stand_tac_run_hmg_fwd_fast_3p_01" BlendInTime="0" Layer="0" Loop="0" ForceUpdate="0" PauseAnimGraph="0" ControlMovement="0"/>
+  </Node>
+  <Node Id="127" Class="Logic:Any" pos="1330,1240,0" flags="0">
+   <Inputs />
+  </Node>
+  <Node Id="128" Class="Animations:PlayAnimation" pos="2100,410,0" flags="0">
+   <Inputs entityId="0" anim_Animation="stand_tac_jump_start_fwd_rifle_3p_01" BlendInTime="0" Layer="0" Loop="0" ForceUpdate="0" PauseAnimGraph="0" ControlMovement="0"/>
+  </Node>
+  <Node Id="129" Class="Inventory:ItemRemoveAll" pos="-530,-170,0" flags="0">
+   <Inputs entityId="0"/>
+  </Node>
+  <Node Id="130" Class="Inventory:EquipPackAdd" pos="-250,-200,0" flags="0">
+   <Inputs entityId="0" equip_Pack="" Add="0" SelectPrimary="0"/>
+  </Node>
+  <Node Id="131" Class="Logic:Once" pos="1290,680,0" flags="0">
+   <Inputs />
+  </Node>
+ </Nodes>
+ <Edges>
+  <Edge nodeIn="24" nodeOut="1" portIn="Enable" portOut="output" enabled="1"/>
+  <Edge nodeIn="33" nodeOut="1" portIn="input" portOut="output" enabled="1"/>
+  <Edge nodeIn="113" nodeOut="1" portIn="Enable" portOut="output" enabled="1"/>
+  <Edge nodeIn="129" nodeOut="1" portIn="Activate" portOut="output" enabled="1"/>
+  <Edge nodeIn="130" nodeOut="1" portIn="Trigger" portOut="output" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="4" portIn="in1" portOut="hit" enabled="1"/>
+  <Edge nodeIn="40" nodeOut="4" portIn="message" portOut="direction" enabled="1"/>
+  <Edge nodeIn="40" nodeOut="4" portIn="input" portOut="nohit" enabled="1"/>
+  <Edge nodeIn="57" nodeOut="4" portIn="input" portOut="hit" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="5" portIn="go" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="15" nodeOut="5" portIn="go" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="16" nodeOut="5" portIn="go" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="31" nodeOut="5" portIn="input" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="37" nodeOut="5" portIn="go" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="24" nodeOut="8" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="113" nodeOut="8" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="129" nodeOut="8" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="130" nodeOut="8" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="9" nodeOut="10" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="63" nodeOut="10" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="70" nodeOut="10" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="128" nodeOut="10" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="15" portIn="in2" portOut="hit" enabled="1"/>
+  <Edge nodeIn="64" nodeOut="15" portIn="vector" portOut="normal" enabled="1"/>
+  <Edge nodeIn="67" nodeOut="15" portIn="in" portOut="hit" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="16" portIn="in3" portOut="hit" enabled="1"/>
+  <Edge nodeIn="71" nodeOut="16" portIn="vector" portOut="normal" enabled="1"/>
+  <Edge nodeIn="72" nodeOut="16" portIn="in" portOut="hit" enabled="1"/>
+  <Edge nodeIn="32" nodeOut="18" portIn="input" portOut="out" enabled="1"/>
+  <Edge nodeIn="45" nodeOut="18" portIn="in" portOut="out" enabled="1"/>
+  <Edge nodeIn="128" nodeOut="18" portIn="Start" portOut="out" enabled="1"/>
+  <Edge nodeIn="28" nodeOut="24" portIn="A" portOut="Pressed" enabled="1"/>
+  <Edge nodeIn="28" nodeOut="24" portIn="Compare" portOut="Pressed" enabled="1"/>
+  <Edge nodeIn="5" nodeOut="28" portIn="Trigger" portOut="True" enabled="1"/>
+  <Edge nodeIn="30" nodeOut="28" portIn="input" portOut="True" enabled="1"/>
+  <Edge nodeIn="118" nodeOut="28" portIn="in1" portOut="True" enabled="1"/>
+  <Edge nodeIn="4" nodeOut="29" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="15" nodeOut="29" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="16" nodeOut="29" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="37" nodeOut="29" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="18" nodeOut="37" portIn="in4" portOut="hit" enabled="1"/>
+  <Edge nodeIn="9" nodeOut="45" portIn="activate" portOut="out" enabled="1"/>
+  <Edge nodeIn="38" nodeOut="45" portIn="input" portOut="out" enabled="1"/>
+  <Edge nodeIn="63" nodeOut="64" portIn="impulse" portOut="out" enabled="1"/>
+  <Edge nodeIn="63" nodeOut="67" portIn="activate" portOut="out" enabled="1"/>
+  <Edge nodeIn="70" nodeOut="71" portIn="impulse" portOut="out" enabled="1"/>
+  <Edge nodeIn="70" nodeOut="72" portIn="activate" portOut="out" enabled="1"/>
+  <Edge nodeIn="86" nodeOut="73" portIn="start" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="87" nodeOut="73" portIn="start" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="123" nodeOut="73" portIn="start" portOut="InAir" enabled="1"/>
+  <Edge nodeIn="73" nodeOut="74" portIn="Trigger" portOut="True" enabled="1"/>
+  <Edge nodeIn="114" nodeOut="74" portIn="input" portOut="True" enabled="1"/>
+  <Edge nodeIn="115" nodeOut="74" portIn="input" portOut="False" enabled="1"/>
+  <Edge nodeIn="79" nodeOut="75" portIn="vector" portOut="normal" enabled="1"/>
+  <Edge nodeIn="83" nodeOut="75" portIn="activate" portOut="hit" enabled="1"/>
+  <Edge nodeIn="89" nodeOut="75" portIn="input" portOut="hit" enabled="1"/>
+  <Edge nodeIn="127" nodeOut="75" portIn="in1" portOut="hit" enabled="1"/>
+  <Edge nodeIn="81" nodeOut="76" portIn="vector" portOut="normal" enabled="1"/>
+  <Edge nodeIn="84" nodeOut="76" portIn="activate" portOut="hit" enabled="1"/>
+  <Edge nodeIn="127" nodeOut="76" portIn="in2" portOut="hit" enabled="1"/>
+  <Edge nodeIn="75" nodeOut="77" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="76" nodeOut="77" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="120" nodeOut="77" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="95" nodeOut="79" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="94" nodeOut="81" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="83" nodeOut="85" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="84" nodeOut="85" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="122" nodeOut="85" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="126" nodeOut="85" portIn="entityId" portOut="entityId" enabled="1"/>
+  <Edge nodeIn="75" nodeOut="86" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="100" nodeOut="86" portIn="input" portOut="finished" enabled="1"/>
+  <Edge nodeIn="76" nodeOut="87" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="91" nodeOut="88" portIn="input" portOut="True" enabled="1"/>
+  <Edge nodeIn="118" nodeOut="88" portIn="in2" portOut="True" enabled="1"/>
+  <Edge nodeIn="84" nodeOut="92" portIn="impulse" portOut="out" enabled="1"/>
+  <Edge nodeIn="83" nodeOut="93" portIn="impulse" portOut="out" enabled="1"/>
+  <Edge nodeIn="92" nodeOut="94" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="93" nodeOut="95" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="74" nodeOut="113" portIn="A" portOut="Pressed" enabled="1"/>
+  <Edge nodeIn="74" nodeOut="113" portIn="Compare" portOut="Pressed" enabled="1"/>
+  <Edge nodeIn="88" nodeOut="113" portIn="A" portOut="Released" enabled="1"/>
+  <Edge nodeIn="88" nodeOut="113" portIn="Compare" portOut="Released" enabled="1"/>
+  <Edge nodeIn="86" nodeOut="118" portIn="stop" portOut="out" enabled="1"/>
+  <Edge nodeIn="87" nodeOut="118" portIn="stop" portOut="out" enabled="1"/>
+  <Edge nodeIn="123" nodeOut="118" portIn="stop" portOut="out" enabled="1"/>
+  <Edge nodeIn="126" nodeOut="118" portIn="Stop" portOut="out" enabled="1"/>
+  <Edge nodeIn="121" nodeOut="120" portIn="vector" portOut="normal" enabled="1"/>
+  <Edge nodeIn="122" nodeOut="120" portIn="activate" portOut="hit" enabled="1"/>
+  <Edge nodeIn="127" nodeOut="120" portIn="in3" portOut="hit" enabled="1"/>
+  <Edge nodeIn="125" nodeOut="121" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="120" nodeOut="123" portIn="go" portOut="count" enabled="1"/>
+  <Edge nodeIn="122" nodeOut="124" portIn="impulse" portOut="out" enabled="1"/>
+  <Edge nodeIn="124" nodeOut="125" portIn="A" portOut="out" enabled="1"/>
+  <Edge nodeIn="126" nodeOut="127" portIn="Start" portOut="out" enabled="1"/>
+  <Edge nodeIn="130" nodeOut="129" portIn="equip_Pack" portOut="Done" enabled="1"/>
+ </Edges>
+ <GraphTokens />
+</Graph>
